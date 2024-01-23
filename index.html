@@ -6,44 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>My Website</title>
-	<link href="styles/style.css" rel="stylesheet" type="text/css" />
+	<link href="resources/styles/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<section>
-		<h1>Home</h1>
-		<button id="theme">Toggle</button>
-	</section>
-	<section>
-		<h1>About</h1>
-	</section>
-	<section>
-		<h1>Skills</h1>
-	</section>
-
 	<main>
+		<section>
+			<h1>Home</h1>
+			<button id="theme">Toggle</button>
+		</section>
+		<section>
+			<h1>About</h1>
+		</section>
+		<section>
+			<h1>Skills</h1>
+		</section>		
 	</main>
-	<table>
-		<tr>
-			<input type="button" value="PDF" onclick="pdfopen();" />
-		</tr>
-	</table>
 
 </body>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
-<script src="js/main.js" defer></script>
-<script>
-	async function pdfopen() {
-		try {
-			const response = await axios.get('http://localhost:8080/pdf/create');
-			var pdfData = response.data;
-			var pdfWindow = window.open("");
-			pdfWindow.document.write("<iframe width='100%' height='100%' src = 'data:application/pdf;base64, " + encodeURI(pdfData) + "' ></iframe > ");
-		} catch (errors) {
-			console.log(errors);
-		}
-	}
-</script>
+<script src="resources/js/main.js" defer></script>
 
 </html>
